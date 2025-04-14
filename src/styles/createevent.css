@@ -1,0 +1,60 @@
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.event-form fieldset {
+  border: none;
+  margin-bottom: 20px;
+}
+
+.event-form legend {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.event-form input,
+.event-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.event-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.event-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(255, 70, 101);
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.event-form button:hover {
+  background-color: rgb(255, 31, 68);
+}
