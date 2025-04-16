@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import "./styles/login.css"
+import "../styles/login.css"
 function Login({ setIsLoggedIn }) {
   const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +20,7 @@ function Login({ setIsLoggedIn }) {
   };
 
   return (
-    <>
+    < div className="login-div">
     <div className="search-wrapper auth-title-wrapper">
       <h1 className="allevents auth-title">Login</h1>
     </div>
@@ -30,7 +30,7 @@ function Login({ setIsLoggedIn }) {
         <input
           value={email}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="📧 Username"
+          placeholder="📧 Email"
           className="auth-input"
         /><br />
         <input
@@ -44,7 +44,7 @@ function Login({ setIsLoggedIn }) {
         <p>Don't have an account? <a href="/signup">Signup</a></p>
       </div>
     </div>
-  </>
+  </div>
   
   );
 }

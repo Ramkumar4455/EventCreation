@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
-import Events from "./Events";
-import Navbar from "./Navbar";
-import CreateEvent from "./createevent";
-import Login from "./Login";
-import Signup from "./Signup";
+import Events from "./pages/events";
+import Navbar from "./componenets/navbar";
+import CreateEvent from "./pages/createevent";
+import Login from "./pages/login";
+import Signup from "./pages/signup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./app.css";
-import MyEvents from "./MyEvents"
+import MyEvents from "./pages/MyEvents"
 function App() {
   const [events, setEvents] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import './styles/CreateEvent.css'; // Make sure this file exists
+import '../styles/CreateEvent.css'; // Make sure this file exists
 
 function CreateEvent({ fetchEvents }) {
   const [formData, setFormData] = useState({

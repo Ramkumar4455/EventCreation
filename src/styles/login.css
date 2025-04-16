@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 100vh;
+
   padding-top: 40px;
 }
 
@@ -32,6 +32,10 @@
   background-color: rgb(255, 70, 101);
 }
 
+.auth-button:hover{
+   background-color:rgb(255, 31, 68);
+}
+
 .auth-title-wrapper {
   margin-top: 100px;
   margin-bottom: 0px;
@@ -39,4 +43,9 @@
 
 .auth-title {
   color: rgb(255, 31, 68);
+}
+
+
+.login-div{
+  margin-top: 100px;
 }

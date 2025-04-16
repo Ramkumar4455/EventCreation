@@ -58,3 +58,99 @@
   background-color: rgb(255, 31, 68);
   margin-bottom: 10px;
 }
+/* navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 6px -1px rgba(102, 98, 98, 0.1);
+  font-family: "Trebuchet MS";
+  position: relative;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.CR7 {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.title {
+  color: rgb(255, 31, 68);
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.navLink {
+  position: relative;
+  text-decoration: none;
+  color: rgb(69, 65, 65);
+  padding: 5px 0;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: black;
+  transition: width 0.3s ease-in-out;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.logoutBtn {
+  background-color: rgb(255, 70, 101);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.logoutBtn:hover{
+  background-color:rgb(255, 31, 68);
+}
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}

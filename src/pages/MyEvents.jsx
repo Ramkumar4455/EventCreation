@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
-import './styles/MyEvents.css'
+import '../styles/MyEvents.css'
 const MyEvents = ({ events, setEvents }) => {
   const [email, setEmail] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
@@ -78,11 +78,12 @@ const closeModal = () => {
 
   const filteredEvents = events
     .filter((event) => event.email === email)
-    .filter((event) => event.title.toLowerCase().includes(searchTerm.toLowerCase()));
+    .filter((event) => event.title.toLowerCase().includes(searchTerm.toLowerCase()))
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
 
   return (
 
-    <div className="container">
+    <div className="events-div">
 
     <div className="search-wrapper">
       <input
@@ -101,38 +102,41 @@ const closeModal = () => {
   
   {filteredEvents.length === 0 && <p>No events found.</p>}
 
-  <div className="events-grid">
-  {filteredEvents.map((event) => (
-    <div className="event-card" key={event._id}>
-      <img src={event.imageUrl} alt={event.title} className="event-img" />
+  <div className="events-container1">
+  {filteredEvents.map((event,index) => (
+   <div className="event-card" key={index}>
+   <div className="event-image">
+     <img src={event.imageUrl} alt={event.title} />
+   </div>
+   <div className="event-details">
+     <h3>{event.title}</h3>
+     <p className="description" style={{ fontSize: "16px" }}>{event.description}</p>
 
-      <div className="event-content">
-        <h3>{event.title}</h3>
-        <p className="description">{event.description}</p>
+   <div className='underline-cont' > <div  className='underline' style={{ backgroundColor:"rgba(0, 0, 0, 0.1)"}}></div></div>
+  
+     <div className="row">
+       <p><strong >Place:</strong><span style={{ color: "#444"}}> {event.place}</span> </p>
+       <p><strong>📍</strong> <a href={event.locationUrl} target="_blank" rel="noopener noreferrer">View on map</a></p>
+     </div>
+     <div className='underline-cont' > <div  className='underline' style={{ backgroundColor:"rgba(0, 0, 0, 0.1)"}}></div></div>
 
-        <div className="row space-between">
-          <p><strong>Place:</strong> {event.place}</p>
-          <a href={event.locationUrl} target="_blank" rel="noopener noreferrer">
-           View Location
-          </a>
-        </div>
 
-        <div className="row space-between">
-          <p><strong>Date:</strong> {event.date}</p>
-          <p><strong>Time:</strong> {event.time}</p>
-        </div>
+     <div className="row">
+       <p><strong>Date:</strong><span style={{ color: "#444"}}> {event.date}</span> </p>
+       <p><strong>Time:</strong><span style={{ color: "#444"}}> {event.time}</span> </p>
+     </div>
+     <div className='underline-cont' > <div  className='underline' style={{ backgroundColor:"rgba(0, 0, 0, 0.1)"}}></div></div>
 
-        <div className="row space-between">
-          <p><strong>Price:</strong> ₹{event.price}</p>
-          <p><strong>Seats:</strong> {event.seats}</p>
-        </div>
-
-        <div className="row space-between buttons">
-          <button onClick={() => openEditModal(event)}>Edit</button>
-          <button onClick={() => handleDelete(event._id)}>Delete</button>
-        </div>
-      </div>
-    </div>
+     <div className="row">
+       <p><strong>Price per seat:</strong><span style={{ color: "#444"}}> ₹{event.price}</span> </p>
+       <p><strong>No of Seats:</strong><span style={{ color: "#444"}}> {event.seats}</span> </p>
+     </div>
+     <div className="row space-between buttons">
+          <button onClick={() => openEditModal(event)} className="my-button">Edit</button>
+          <button onClick={() => handleDelete(event._id)} className="my-button">Delete</button>
+     </div>
+   </div>
+ </div>
   ))}
 </div>
 

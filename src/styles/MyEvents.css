@@ -114,13 +114,44 @@ button + button {
 .modal-buttons button {
   padding: 10px 15px;
   border: none;
-  background-color: #0e76a8;
+  background-color: rgb(255, 70, 101);
   color: white;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .modal-buttons button:hover {
-  background-color: #0a5c84;
+  background-color:rgb(255, 31, 68);
 }
 
+.my-button{
+  background-color: rgb(255, 70, 101);
+}
+
+.my-button:hover{
+  background-color:rgb(255, 31, 68);
+}
+
+
+.events-container1 {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  padding: 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Tablet view - 2 columns */
+@media (max-width: 900px) {
+  .events-container1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile view - 1 column */
+@media (max-width: 600px) {
+  .events-container1 {
+    grid-template-columns: 1fr;
+  }
+}
